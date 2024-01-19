@@ -1,0 +1,13 @@
+---
+- name: Run Date Command on Remote Linux
+  hosts: tomcat_server  # Replace with the target host or group of hosts
+  remote_user: root 
+
+  tasks:
+    - name: Run date command
+      command: date
+      register: date_output  # Store the output of the date command
+
+    - name: Display date output
+      debug:
+        var: date_output.stdout
