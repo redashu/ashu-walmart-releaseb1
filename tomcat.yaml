@@ -12,7 +12,7 @@
       debug:
         var: date_output.stdout
 
-   - name: Clone GitHub repository (specify release)
+    - name: Clone GitHub repository (specify release)
       git:
         repo: https://github.com/redashu/ashu-walmart-releaseb1.git  # Replace with your GitHub repository URL
         dest: /tmp/deployashu # keep your own name 
