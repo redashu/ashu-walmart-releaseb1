@@ -11,3 +11,17 @@
     - name: Display date output
       debug:
         var: date_output.stdout
+
+    - name: Clone GitHub repository (specify release)
+      git:
+        repo: https://github.com/redashu/ashu-walmart-releaseb1.git  # Replace with your GitHub repository URL
+        dest: /opt/apache-tomcat-10.1.18/webapps/
+        version: release  
+
+    - name: Run ls command to check copied files
+      command: ls /opt/apache-tomcat-10.1.18/webapps/
+      register: ls_output  
+
+    - name: Display ls output
+      debug:
+        var: ls_output.stdout
